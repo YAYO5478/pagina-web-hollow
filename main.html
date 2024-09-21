@@ -3,12 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Web con 3 Secciones</title>
+    <title>Página Web con Menú Lateral</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
+        }
+        /* Menú de navegación lateral */
+        nav {
+            width: 200px;
+            height: 100vh; /* 100% de la altura de la pantalla */
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+        }
+        nav a {
+            display: block;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        /* Contenido principal de la página */
+        .content {
+            margin-left: 220px; /* espacio para el menú */
+            padding: 20px;
         }
         header, section, footer {
             padding: 20px;
@@ -20,47 +46,64 @@
         }
         section {
             padding: 50px;
+            margin-bottom: 20px;
         }
-        #section1 {
+        #tema1 {
             background-color: #f2f2f2;
         }
-        #section2 {
+        #tema2 {
             background-color: #e6e6e6;
         }
-        #section3 {
+        #tema3 {
             background-color: #cccccc;
         }
         footer {
             background-color: #333;
             color: white;
+            text-align: center;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Bienvenidos a Mi Página Web</h1>
-        <p>Una página simple con 3 secciones</p>
-    </header>
+    <!-- Menú de navegación lateral -->
+    <nav>
+        <a href="#tema1">Tema 1: Historia</a>
+        <a href="#tema2">Tema 2: Tecnología</a>
+        <a href="#tema3">Tema 3: Ciencia</a>
+    </nav>
 
-    <section id="section1">
-        <h2>Sección 1: Sobre Nosotros</h2>
-        <p>Esta es la primera sección. Aquí puedes escribir información sobre tu sitio web o empresa.</p>
-    </section>
+    <!-- Contenido principal -->
+    <div class="content">
+        <header>
+            <h1>Bienvenidos a Mi Página Web</h1>
+            <p>Selecciona un tema desde el menú lateral</p>
+        </header>
 
-    <section id="section2">
-        <h2>Sección 2: Servicios</h2>
-        <p>En esta sección, puedes describir los servicios que ofreces.</p>
-    </section>
+        <!-- Sección 1 -->
+        <section id="tema1">
+            <h2>Tema 1: Historia</h2>
+            <p>Aquí puedes escribir sobre hechos históricos importantes. Por ejemplo, la historia de las grandes civilizaciones.</p>
+        </section>
 
-    <section id="section3">
-        <h2>Sección 3: Contacto</h2>
-        <p>Aquí puedes añadir información de contacto, como dirección de correo electrónico o teléfono.</p>
-    </section>
+        <!-- Sección 2 -->
+        <section id="tema2">
+            <h2>Tema 2: Tecnología</h2>
+            <p>Esta sección puede estar dedicada a los avances tecnológicos más recientes o los hitos en el mundo de la tecnología.</p>
+        </section>
 
-    <footer>
-        <p>Derechos reservados © 2024</p>
-    </footer>
+        <!-- Sección 3 -->
+        <section id="tema3">
+            <h2>Tema 3: Ciencia</h2>
+            <p>En este apartado, podrías discutir temas científicos, descubrimientos recientes o teorías innovadoras.</p>
+        </section>
+
+        <!-- Pie de página -->
+        <footer>
+            <p>Derechos reservados © 2024</p>
+        </footer>
+    </div>
 
 </body>
 </html>
