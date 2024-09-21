@@ -4,100 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Web con Menú Lateral</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Librería de iconos -->
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
             display: flex;
         }
+
         /* Menú de navegación lateral */
         nav {
-            width: 200px;
-            height: 100vh; /* 100% de la altura de la pantalla */
-            background-color: #333;
+            width: 250px;
+            background-color: #202123;
+            height: 100vh;
             position: fixed;
             top: 0;
             left: 0;
-            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            padding-top: 30px;
         }
+
+        /* Estilo de los enlaces del menú */
         nav a {
-            display: block;
-            color: white;
+            display: flex;
+            align-items: center;
             padding: 15px;
+            font-size: 16px;
+            color: #fff;
             text-decoration: none;
-            text-align: center;
+            transition: background-color 0.3s;
         }
+
         nav a:hover {
-            background-color: #575757;
+            background-color: #343541;
         }
-        /* Contenido principal de la página */
+
+        nav a i {
+            margin-right: 10px;
+        }
+
+        /* Estilo del contenido principal */
         .content {
-            margin-left: 220px; /* espacio para el menú */
+            margin-left: 250px;
             padding: 20px;
+            width: 100%;
         }
-        header, section, footer {
+
+        header, footer {
             padding: 20px;
             text-align: center;
         }
+
         header {
             background-color: #4CAF50;
             color: white;
         }
-        section {
-            padding: 50px;
-            margin-bottom: 20px;
-        }
-        #tema1 {
-            background-color: #f2f2f2;
-        }
-        #tema2 {
-            background-color: #e6e6e6;
-        }
-        #tema3 {
-            background-color: #cccccc;
-        }
+
         footer {
             background-color: #333;
             color: white;
             text-align: center;
             padding: 10px;
         }
+
     </style>
 </head>
 <body>
 
     <!-- Menú de navegación lateral -->
     <nav>
-        <a href="#tema1">Tema 1: Historia</a>
-        <a href="#tema2">Tema 2: Tecnología</a>
-        <a href="#tema3">Tema 3: Ciencia</a>
+        <a href="historia.html" target="_blank"><i class="fas fa-history"></i>Tema 1: Historia</a>
+        <a href="tecnologia.html" target="_blank"><i class="fas fa-laptop-code"></i>Tema 2: Tecnología</a>
+        <a href="ciencia.html" target="_blank"><i class="fas fa-flask"></i>Tema 3: Ciencia</a>
     </nav>
 
     <!-- Contenido principal -->
     <div class="content">
         <header>
             <h1>Bienvenidos a Mi Página Web</h1>
-            <p>Selecciona un tema desde el menú lateral</p>
+            <p>Selecciona un tema desde el menú lateral para abrir en una nueva ventana</p>
         </header>
-
-        <!-- Sección 1 -->
-        <section id="tema1">
-            <h2>Tema 1: Historia</h2>
-            <p>Aquí puedes escribir sobre hechos históricos importantes. Por ejemplo, la historia de las grandes civilizaciones.</p>
-        </section>
-
-        <!-- Sección 2 -->
-        <section id="tema2">
-            <h2>Tema 2: Tecnología</h2>
-            <p>Esta sección puede estar dedicada a los avances tecnológicos más recientes o los hitos en el mundo de la tecnología.</p>
-        </section>
-
-        <!-- Sección 3 -->
-        <section id="tema3">
-            <h2>Tema 3: Ciencia</h2>
-            <p>En este apartado, podrías discutir temas científicos, descubrimientos recientes o teorías innovadoras.</p>
-        </section>
 
         <!-- Pie de página -->
         <footer>
