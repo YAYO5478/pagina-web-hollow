@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Web con Menú Lateral</title>
+    <title>Página Web con Menú Lateral y Carga de Contenido Dinámico</title>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Librería de iconos -->
     <style>
         body {
@@ -27,7 +27,6 @@
             padding-top: 30px;
         }
 
-        /* Estilo de los enlaces del menú */
         nav a {
             display: flex;
             align-items: center;
@@ -36,6 +35,7 @@
             color: #fff;
             text-decoration: none;
             transition: background-color 0.3s;
+            cursor: pointer;
         }
 
         nav a:hover {
@@ -46,19 +46,17 @@
             margin-right: 10px;
         }
 
-        /* Estilo del contenido principal */
+        /* Estilo del contenedor principal donde cambiaremos el contenido */
         .content {
             margin-left: 250px;
             padding: 20px;
             width: 100%;
-        }
-
-        header, footer {
-            padding: 20px;
-            text-align: center;
+            background-color: #ffffff;
         }
 
         header {
+            padding: 20px;
+            text-align: center;
             background-color: #4CAF50;
             color: white;
         }
@@ -69,30 +67,62 @@
             text-align: center;
             padding: 10px;
         }
-
     </style>
 </head>
 <body>
 
     <!-- Menú de navegación lateral -->
     <nav>
-        <a href="ventanas\historia.html" target="_blank"><i class="fas fa-history"></i>Tema 1: Historia</a>
-        <a href="ventanas\tecnologia.html" target="_blank"><i class="fas fa-laptop-code"></i>Tema 2: Tecnología</a>
-        <a href="ventanas\ciencia.html" target="_blank"><i class="fas fa-flask"></i>Tema 3: Ciencia</a>
+        <a id="tema1"><i class="fas fa-history"></i>Tema 1: Historia</a>
+        <a id="tema2"><i class="fas fa-laptop-code"></i>Tema 2: Tecnología</a>
+        <a id="tema3"><i class="fas fa-flask"></i>Tema 3: Ciencia</a>
     </nav>
 
-    <!-- Contenido principal -->
+    <!-- Contenedor principal donde se cargará el contenido dinámico -->
     <div class="content">
         <header>
             <h1>Bienvenidos a Mi Página Web</h1>
-            <p>Selecciona un tema desde el menú lateral para abrir en una nueva ventana</p>
+            <p>Selecciona un tema desde el menú lateral para ver más información</p>
         </header>
-
-        <!-- Pie de página -->
-        <footer>
-            <p>Derechos reservados © 2024</p>
-        </footer>
     </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>Derechos reservados © 2024</p>
+    </footer>
+
+    <script>
+        // Obtener el contenedor principal donde cambiaremos el contenido
+        var contentDiv = document.querySelector('.content');
+
+        // Asignar eventos de clic a cada botón del menú
+        document.getElementById('tema1').onclick = function() {
+            contentDiv.innerHTML = `
+                <header>
+                    <h1>Tema 1: Historia</h1>
+                    <p>Aquí puedes escribir sobre hechos históricos importantes. Por ejemplo, la historia de las grandes civilizaciones.</p>
+                </header>
+            `;
+        }
+
+        document.getElementById('tema2').onclick = function() {
+            contentDiv.innerHTML = `
+                <header>
+                    <h1>Tema 2: Tecnología</h1>
+                    <p>Esta sección puede estar dedicada a los avances tecnológicos más recientes o los hitos en el mundo de la tecnología.</p>
+                </header>
+            `;
+        }
+
+        document.getElementById('tema3').onclick = function() {
+            contentDiv.innerHTML = `
+                <header>
+                    <h1>Tema 3: Ciencia</h1>
+                    <p>En este apartado, podrías discutir temas científicos, descubrimientos recientes o teorías innovadoras.</p>
+                </header>
+            `;
+        }
+    </script>
 
 </body>
 </html>
